@@ -7,5 +7,5 @@ before_install:
   - go get -v golang.org/x/lint/golint
 
 script:
-  - chmod +x ./pre_commit && ./pre_commit
+  - chmod +x pre_commit && ./pre_commit
   - go test
