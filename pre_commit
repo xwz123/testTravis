@@ -1,6 +1,6 @@
 #!/bin/sh
 
-LATEST_STABLE_SUPPORTED_GO_VERSION="1.11"
+LATEST_STABLE_SUPPORTED_GO_VERSION="1.13"
 
 main() {
   if local_go_version_is_latest_stable
@@ -13,7 +13,7 @@ main() {
 }
 
 local_go_version_is_latest_stable() {
-  go version | grep -q $LATEST_STABLE_SUPPORTED_GO_VERSION
+  go version | grep  $LATEST_STABLE_SUPPORTED_GO_VERSION
 }
 
 log_error() {
