@@ -10,13 +10,13 @@ const (
 	jsonPr   = `{"id":"123","action":"open","pull_request":"add pr"}`
 )
 
-type NoteHook struct {
+type noteHook struct {
 	ID      string `json:"id"`
 	Action  string `json:"action"`
 	Comment string `json:"comment"`
 }
 
-type PRHook struct {
+type prHook struct {
 	ID          string `json:"id"`
 	Action      string `json:"action"`
 	PullRequest string `json:"pull_request"`
@@ -32,9 +32,9 @@ func parsePayload(payLoad []byte, v interface{}) error {
 		return err
 	}
 	switch t := v.(type) {
-	case *NoteHook:
+	case *noteHook:
 		fmt.Println(t.Comment)
-	case *PRHook:
+	case *prHook:
 		fmt.Println(t.PullRequest)
 	default:
 		fmt.Printf("unexpected type %T", v)

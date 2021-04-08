@@ -4,8 +4,8 @@ import "testing"
 
 func TestTravisHello(t *testing.T) {
 	sayTravisHello()
-	var hk NoteHook
-	var pr PRHook
+	var hk noteHook
+	var pr prHook
 	err := parsePayload([]byte(jsonNote), &hk)
 	if err != nil {
 		t.Error(err)
